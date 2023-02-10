@@ -4,8 +4,7 @@ Student name - Gaurang Naik
 Student # A00250808
 ==============================================================================================
 Assignment 2
-Program description - This program takes a number and its unit of measurement to convert. 
-The program converts the number into appropriate units and diplay the details of the conversion.
+Functions and Arrays
 =============================================================================================== 
 */
 
