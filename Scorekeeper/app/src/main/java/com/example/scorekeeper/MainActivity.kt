@@ -26,10 +26,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun IncrementScoreTeam1(view: android.view.View) {
+    //This is event handler for awarding the points to Team1
+    fun incrementScoreTeam1(view: android.view.View) {
         val spinnerMavericks: Spinner = findViewById(R.id.spinnerTeam1);
         var selectedItem = spinnerMavericks.selectedItem
-        if (selectedItem.equals("Select Points")) {
+        if (selectedItem.equals("Select Points")) { // sending short Toast message as a validation if user has not selected the Points from Spinner
             Toast.makeText(
                 applicationContext, "Please select the points to be awarded from the dropdown.",
                 Toast.LENGTH_SHORT
@@ -38,14 +39,15 @@ class MainActivity : AppCompatActivity() {
             val textViewScore: TextView = findViewById(R.id.textViewScoreTeam1);
             val incrementBy: Int = selectedItem.toString().toInt();
             val currentScore: Int = textViewScore.text.toString().toInt();
-            textViewScore.text = (incrementBy + currentScore).toString();
+            textViewScore.text = (incrementBy + currentScore).toString(); // Incrementing the points and assigning it to our textViewScore view to show updated points.
         }
     }
 
-    fun DecrementScoreTeam1(view: android.view.View) {
+    //This is event handler for reducing the points to Team1
+    fun decrementScoreTeam1(view: android.view.View) {
         val spinnerMavericks: Spinner = findViewById(R.id.spinnerTeam1);
         var selectedItem = spinnerMavericks.selectedItem
-        if (selectedItem.equals("Select Points")) {
+        if (selectedItem.equals("Select Points")) { // sending short Toast message as a validation if user has not selected the Points from Spinner
             Toast.makeText(
                 applicationContext, "Please select the points to be reduced from the dropdown.",
                 Toast.LENGTH_SHORT
@@ -54,9 +56,9 @@ class MainActivity : AppCompatActivity() {
             val textViewScore: TextView = findViewById(R.id.textViewScoreTeam1);
             val decrementBy: Int = selectedItem.toString().toInt();
             val currentScore: Int = textViewScore.text.toString().toInt();
-            if (currentScore != 0) {
-                textViewScore.text = (currentScore - decrementBy).toString();
-            } else {
+            if (currentScore != 0) { // points cannot be lesser than 0. Added a validation
+                textViewScore.text = (currentScore - decrementBy).toString(); // Decrementing the points and assigning it to our textViewScore view to show updated points.
+            } else { // sending short toast message if user attempts to reduce more than 0.
                 Toast.makeText(
                     applicationContext, "Can not reduce beyond zero.",
                     Toast.LENGTH_SHORT
@@ -65,11 +67,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    fun IncrementScoreTeam2(view: android.view.View) {
+    //This is event handler for awarding the points to Team2
+    fun incrementScoreTeam2(view: android.view.View) {
         val spinnerWarriors: Spinner = findViewById(R.id.spinnerTeam2);
         var selectedItem = spinnerWarriors.selectedItem
-        if (selectedItem.equals("Select Points")) {
+        if (selectedItem.equals("Select Points")) { // sending short Toast message as a validation if user has not selected the Points from Spinner
             Toast.makeText(
                 applicationContext, "Please select the points to be awarded from the dropdown.",
                 Toast.LENGTH_SHORT
@@ -78,14 +80,14 @@ class MainActivity : AppCompatActivity() {
             val textViewScore: TextView = findViewById(R.id.textViewScoreTeam2);
             val incrementBy: Int = selectedItem.toString().toInt();
             val currentScore: Int = textViewScore.text.toString().toInt();
-            textViewScore.text = (incrementBy + currentScore).toString();
+            textViewScore.text = (incrementBy + currentScore).toString(); // Incrementing the points and assigning it to our textViewScore view to show updated points.
         }
     }
 
-    fun DecrementScoreTeam2(view: android.view.View) {
+    fun decrementScoreTeam2(view: android.view.View) {
         val spinnerWarriors: Spinner = findViewById(R.id.spinnerTeam2);
         var selectedItem = spinnerWarriors.selectedItem
-        if (selectedItem.equals("Select Points")) {
+        if (selectedItem.equals("Select Points")) {// sending short Toast message as a validation if user has not selected the Points from Spinner
             Toast.makeText(
                 applicationContext, "Please select the points to be reduced from the dropdown.",
                 Toast.LENGTH_SHORT
@@ -94,9 +96,9 @@ class MainActivity : AppCompatActivity() {
             val textViewScore: TextView = findViewById(R.id.textViewScoreTeam2);
             val decrementBy: Int = selectedItem.toString().toInt();
             val currentScore: Int = textViewScore.text.toString().toInt();
-            if (currentScore != 0) {
-                textViewScore.text = (currentScore - decrementBy).toString();
-            } else {
+            if (currentScore != 0) { // points cannot be lesser than 0. Added a validation
+                textViewScore.text = (currentScore - decrementBy).toString(); // Decrementing the points and assigning it to our textViewScore view to show updated points.
+            } else { // sending short toast message if user attempts to reduce more than 0.
                 Toast.makeText(
                     applicationContext, "Can not reduce beyond zero.",
                     Toast.LENGTH_SHORT
