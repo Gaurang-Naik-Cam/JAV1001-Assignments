@@ -16,23 +16,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Adding measurements
+        // Loading spinner items. Also added custom_spinner.xml to control the spinner items alignments
         val spinnerMeasurements: Spinner = findViewById(R.id.spinner_measurements)
 
+        //populating the adapter and assigning to the spinner
         ArrayAdapter.createFromResource(
             this,
             R.array.measurements_array,
             R.layout.custom_spinner
-           //android.R.layout.simple_spinner_dropdown_item
         ).also { adapter ->
             adapter.setDropDownViewResource(R.layout.custom_spinner)
             spinnerMeasurements.adapter = adapter
         }
+        //setting up starting element of spinner
         spinnerMeasurements.setSelection(0);
-        spinnerMeasurements.setGravity(Gravity.CENTER);
 
     }
 
+    //Conversion logic on click of the Convert Button
     fun convert_click(view: android.view.View){
         val editTextNumber: EditText = findViewById(R.id.editTextNumber)
         val input:Int? = editTextNumber.text.toString().toIntOrNull();
@@ -42,22 +43,22 @@ class MainActivity : AppCompatActivity() {
         var number :Int;
 
         if(input == null){
-            //send toast message
+            //sending toast message for entering a valid number
             Toast.makeText(
                 applicationContext, "Please enter a number to convert.",
                 Toast.LENGTH_SHORT
             ).show();
-            return;
+            return; //stopping the execution of the rest of the method, since validation failed.
         }
         else{
             number = input.toInt();
         }
         if(unitOfMeasurement.equals("Select Measurement")){
-            Toast.makeText(
+            Toast.makeText( //sending toast message for selecting a correct option from the spinner
                 applicationContext, "Please select the measurement from the dropdown to convert.",
                 Toast.LENGTH_SHORT
             ).show();
-            return;
+            return;//stopping the execution of the rest of the method, since validation failed.
         }
 
         val result:String;
@@ -78,6 +79,7 @@ class MainActivity : AppCompatActivity() {
             else -> String.format("Unable to process the request. Please try again.");
         }
 
+        //setting the message to the output textview
         textviewOutput.text = result;
 
     }
