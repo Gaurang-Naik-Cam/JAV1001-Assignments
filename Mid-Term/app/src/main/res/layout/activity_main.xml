@@ -8,24 +8,83 @@
 
     <LinearLayout
         android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
+        android:gravity="top"
         android:orientation="vertical"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="3dp">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Spinner
-            android:id="@+id/planets_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:layout_width="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.324">
+
+        <TextView
+            android:id="@+id/textViewEnterNumber"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Convert" />
+            android:fontFamily="sans-serif-medium"
+            android:paddingBottom="10dp"
+            android:text="@string/labelEnterNum"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="127dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true"
+            android:textSize="20sp"
+            android:typeface="normal"
+            android:layout_marginBottom="20dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_measurements"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:paddingBottom="10dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center"
+            android:text="Convert"
+            android:layout_marginBottom="20dp"
+            android:onClick="convert_click"/>
+
+        <View
+            android:id="@+id/SplitLine_hor2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/textViewOutput"
+            android:layout_width="372dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingBottom="10dp"
+            android:textAlignment="viewStart"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="127dp" />
+
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

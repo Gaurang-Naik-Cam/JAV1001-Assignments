@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ConversionApp</string>
+    <string name="labelEnterNum">Enter any number</string>
+    <string-array name="measurements_array">
+        <item>Select Measurement</item>
+        <item>KM</item>
+        <item>MI</item>
+        <item>CM</item>
+        <item>IN</item>
+        <item>IN</item>
+        <item>KG</item>
+        <item>G</item>
+        <item>OZ</item>
+    </string-array>
 </resources>
