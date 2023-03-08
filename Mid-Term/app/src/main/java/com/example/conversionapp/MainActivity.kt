@@ -22,9 +22,10 @@ class MainActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.measurements_array,
-           android.R.layout.simple_spinner_dropdown_item
+            R.layout.custom_spinner
+           //android.R.layout.simple_spinner_dropdown_item
         ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            adapter.setDropDownViewResource(R.layout.custom_spinner)
             spinnerMeasurements.adapter = adapter
         }
         spinnerMeasurements.setSelection(0);
