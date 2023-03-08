@@ -35,7 +35,7 @@
 
         <EditText
             android:id="@+id/editTextNumber"
-            android:layout_width="160dp"
+            android:layout_width="250dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:paddingTop="10dp"
@@ -43,7 +43,8 @@
             android:singleLine="true"
             android:textSize="20sp"
             android:typeface="normal"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:inputType="number"/>
 
         <Spinner
             android:id="@+id/spinner_measurements"
@@ -69,6 +70,8 @@
             android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-black"
             android:paddingBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
             android:textAlignment="viewStart"
             android:textSize="20sp"
             android:textStyle="bold"
