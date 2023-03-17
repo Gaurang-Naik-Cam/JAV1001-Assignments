@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <TextView
@@ -23,7 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtViewAppName"
-        android:text="Add an Item"
+        android:text=""
+        android:hint="Add an Item"
         android:textColor="@color/black"
         android:textColorHint="@color/black"></EditText>
 
@@ -37,12 +38,14 @@
 
         <Button
             android:id="@+id/btnAdd"
+            android:backgroundTint="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add" />
+            android:text="Add"/>
 
         <Button
             android:id="@+id/btnDelete"
+            android:backgroundTint="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete"
@@ -50,6 +53,7 @@
 
         <Button
             android:id="@+id/btnClear"
+            android:backgroundTint="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Clear"
@@ -69,10 +73,10 @@
 
     <ListView
         android:id="@+id/ListView"
-        android:layout_below="@+id/txtviewMyList"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:choiceMode="multipleChoice" >
+        android:layout_below="@+id/txtviewMyList"
+        android:choiceMode="multipleChoice">
 
     </ListView>
 
