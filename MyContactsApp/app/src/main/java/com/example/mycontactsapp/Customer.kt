@@ -3,7 +3,7 @@ package com.example.mycontactsapp
  class Customer(){
     lateinit var Name : String
     lateinit var PhoneNumber : String
-    var ImageId : Int = R.id.imgDefault
+    val ImageId : Int = R.drawable.anonymous
 
     constructor(_name:String , _phoneNumber : String) : this() {
         this.Name = _name

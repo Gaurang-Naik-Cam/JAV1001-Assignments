@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
        // var itemlist = arrayListOf<String>()
         var itemlist = arrayListOf<Customer>()
         //var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, itemlist)
-        var adapter = customerAdapter()
+        var adapter = customerAdapter(this,itemlist)
         val btnSave: Button = findViewById(R.id.btnSave)
         //val btnDelete: Button = findViewById(R.id.btnDelete)
        // val btnClear: Button = findViewById(R.id.btnClear)
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
                 editCustomerName.text.clear()
                 editCustomerPhoneNumber.text.clear()
+                adapter.notifyDataSetChanged()
             }
             listView.onRestoreInstanceState(state)
         }
