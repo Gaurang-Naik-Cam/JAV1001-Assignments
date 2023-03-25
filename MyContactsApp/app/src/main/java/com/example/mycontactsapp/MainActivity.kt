@@ -15,21 +15,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var itemlist = arrayListOf<String>()
-        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, itemlist)
-        val btnAdd: Button = findViewById(R.id.btnSave)
+       // var itemlist = arrayListOf<String>()
+        var itemlist = arrayListOf<Customer>()
+        //var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, itemlist)
+        var adapter = customerAdapter()
+        val btnSave: Button = findViewById(R.id.btnSave)
         //val btnDelete: Button = findViewById(R.id.btnDelete)
        // val btnClear: Button = findViewById(R.id.btnClear)
-        val editTextView: EditText = findViewById(R.id.txtInput)
-        val listView: ListView = findViewById(R.id.ListView)
+        val editCustomerName: EditText = findViewById(R.id.txtCustomerName)
+        val editCustomerPhoneNumber :EditText = findViewById(R.id.txtCustomerPhoneNumber)
+        val listView: ListView = findViewById(R.id.ListViewCustomers)
 
-        btnAdd.setOnClickListener {
+        btnSave.setOnClickListener {
             val state = listView.onSaveInstanceState()
-            if (editTextView.text.isNotEmpty()) {
-                itemlist.add(editTextView.text.toString())
+            if (editCustomerName.text.isNotEmpty() && editCustomerPhoneNumber.text.isNotEmpty() ) {
+                var newCustomer: Customer = Customer()
+                newCustomer.Name = editCustomerName.text.toString()
+                newCustomer.PhoneNumber = editCustomerPhoneNumber.text.toString()
+                itemlist.add(newCustomer)
                 listView.adapter = adapter
                 adapter.notifyDataSetChanged()
-                editTextView.text.clear()
+                editCustomerName.text.clear()
+                editCustomerPhoneNumber.text.clear()
             }
             listView.onRestoreInstanceState(state)
         }
